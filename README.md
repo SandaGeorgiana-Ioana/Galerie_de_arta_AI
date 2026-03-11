@@ -1,6 +1,7 @@
 # Proiect in echipa (Galerie de arta) - Infinite pallete
 
 Documentatia proiectului
+
 [Infinite_palette.pdf](https://github.com/user-attachments/files/25899996/Infinite_palette.pdf)
 
 # Video testare 
