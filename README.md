@@ -1,7 +1,6 @@
 # Proiect in echipa (Galerie de arta) - Infinite pallete
-Contribuție personală: implementarea integrării cu OpenAI pentru generarea de imagini artistice și realizarea testării end-to-end cu framework-ul Playwright, acoperind toate funcționalitățile aplicației.
 
-# Documentatia proiectului
+ Documentatia proiectului
 
 [Infinite_palette.pdf](https://github.com/user-attachments/files/25899996/Infinite_palette.pdf)
 
