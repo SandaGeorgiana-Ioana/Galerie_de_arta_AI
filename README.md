@@ -1,2 +1,2 @@
-# Proiect in echipa-Galerie-de-arta
+# Proiect in echipa-Galerie de arta
 
