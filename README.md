@@ -1,2 +1,2 @@
-# ProiectIPDP-Galerie-de-arta
-Pentru proiect la IPDP - Galerie de arta
+# Proiect in echipa-Galerie-de-arta
+
