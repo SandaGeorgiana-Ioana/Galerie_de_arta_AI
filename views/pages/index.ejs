@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="logo">
+    </div>
+
+    <a href="/about" onclick="showContent('about')">About</a>
+    <div class="dropdown">
+        <a href="/art">Arts</a>
+        <div class="submenu">
+            <a href="/portraits" onclick="arts_menu('portraits')">Pencil portraits</a>
+            <a href="/acrylic" onclick="arts_menu('acrylic')">Acrylic paintings</a>
+            <a href="/watercolor" onclick="arts_menu('watercolor')">Watercolor paintings</a>
+            <a href="/draw" onclick="arts_menu('draw')">Drawings</a>
+            <a href="/random_draw" onclick="arts_menu('random_draw')">Random drawings</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="/artists">Artists</a>
+        <div class="submenu">
+            <a href="/bia" onclick="artist_menu('Husu Bianca')">Artist 1</a>
+            <a href="/georgi" onclick="artist_menu('Sanda Georgiana')">Artist 2</a>
+            <a href="/marian" onclick="artist_menu('Garbacea Marian')">Artist 3</a>
+        </div>
+    </div>
+    <a href="/reacts" onclick="showContent('reacts')">Reacts</a>
+    <a href="/ai_art" onclick="showContent('ai')">AI Art</a>
+    <div class="dropdown">
+        <a href="#">Account</a>
+        <div class="submenu">
+            <button onclick="window.location.href='/login'">Login</button>
+
+
+            <a href="#" onclick="account_menu('condition')">Conditions</a>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <h1 id="pageTitle">Welcome at the gallery</h1>
+    <p id="pageContent"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

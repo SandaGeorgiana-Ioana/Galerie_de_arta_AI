@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="register-body">
+<div class="register-form-container">
+    <h1>Register Page</h1>
+
+    <% if (unError) { %>
+        <div class="error"><%= unError %></div>
+    <% } %>
+
+    <% if (passError) { %>
+        <div class="error"><%= passError %></div>
+    <% } %>
+
+    <% if (passMatchError) { %>
+        <div class="error"><%= passMatchError %></div>
+    <% } %>
+
+    <form action="/register" method="post">
+        <input type="text" name="user_name" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="Message">
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+</div>
+</body>

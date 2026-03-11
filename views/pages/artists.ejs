@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+    </div>
+
+    <a href="/about" onclick="showContent('about')">About</a>
+    <div class="dropdown">
+        <a href="/art">Arts</a>
+        <div class="submenu">
+            <a href="/portraits" onclick="arts_menu('portraits')">Pencil portraits</a>
+            <a href="/acrylic" onclick="arts_menu('acrylic')">Acrylic paintings</a>
+            <a href="/watercolor" onclick="arts_menu('watercolor')">Watercolor paintings</a>
+            <a href="/dress" onclick="arts_menu('dress')">Drawings</a>
+            <a href="/random_draw" onclick="arts_menu('random_draw')">Random drawings</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="/artists">Artists</a>
+        <div class="submenu">
+            <a href="/bia" onclick="artist_menu('1')">BIA</a>
+            <a href="/georgi" onclick="artist_menu('2')">GEORGI</a>
+            <a href="/marian" onclick="artist_menu('3')">MARIAN</a>
+        </div>
+    </div>
+    <a href="/reacts" onclick="showContent('reacts')">Reacts</a>
+    <a href="/ai_art" onclick="showContent('ai')">AI Art</a>
+
+    <div class="dropdown">
+        <div class="submenu">
+            <a window.location.href="/register" onclick="account_menu('register')">Register</a>
+            <a href="#" onclick="account_menu('condition')">Conditions</a>
+        </div>
+        <p class="greeting">Hello, <%= user %>!</p>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+</div>
+
+<div class="cart" onclick="showCart()">Cart (<span id="cart_count">0</span>)</div>
+
+<h1 id="text_logo">Infinite pallete</h1>
+<h1 id="page"> ~ our artists ~ </h1>
+
+<div id="main">
+    <a class="show" href="/bia" >BIA</a>
+
+    <a class="show" href="/georgi" >GEORGI</a>
+
+    <a class="show" href="/marian" >MARIAN</a>
+</div>
+
+<script src="/script.js"></script>
+<script src="/routes/authentication.js"></script>
+</body>
+</html>

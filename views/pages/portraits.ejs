@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portraits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+    </div>
+
+    <a href="/about" onclick="showContent('about')">About</a>
+
+    <div class="dropdown">
+        <a href="/art">Arts</a>
+        <div class="submenu">
+            <a href="/portraits" onclick="arts_menu('portraits')">Pencil portraits</a>
+            <a href="/acrylic" onclick="arts_menu('acrylic')">Acrylic paintings</a>
+            <a href="/watercolor" onclick="arts_menu('watercolor')">Watercolor paintings</a>
+            <a href="/dress" onclick="arts_menu('dress')">Dress</a>
+            <a href="/random_draw" onclick="arts_menu('random_draw')">Random drawings</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="/artists">Artists</a>
+        <div class="submenu">
+            <a href="/bia" onclick="artist_menu('1')">BIA</a>
+            <a href="/georgi" onclick="artist_menu('2')">GEORGI</a>
+            <a href="/marian" onclick="artist_menu('3')">MARIAN</a>
+        </div>
+    </div>
+
+    <a href="/reacts" onclick="showContent('reacts')">Reacts</a>
+    <a href="/ai_art" onclick="showContent('ai')">AI Art</a>
+
+    <div class="dropdown">
+        <div class="submenu">
+            <a window.location.href="/register" onclick="account_menu('register')">Register</a>
+            <a href="#" onclick="account_menu('condition')">Conditions</a>
+        </div>
+        <p class="greeting">Hello, <%= user %>!</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+</div>
+
+<h1 id="pageTitle">Pencil portraits</h1>
+
+<div class="cart" onclick="showCart()">Cart (<span id="cart_count">0</span>)</div>
+
+<div class="product-container">
+    <% lucrari.forEach(function(lucrare) {
+        const imagini = lucrare.imagini || [];
+    %>
+    <div class="product">
+        <div class="image_container">
+            <% if (imagini.length > 0) { %>
+                <img class="rotating-image" src="<%= imagini[0] %>" data-images="<%= imagini.join(',') %>" alt="<%= lucrare.art_name %>">
+            <% } %>
+        </div>
+
+        <div class="product-info">
+            <h3><%= lucrare.art_name %></h3>
+            <p><%= lucrare.descriere %></p>
+            <p class="price"><%= lucrare.pret %> RON</p>
+
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="productId" value="<%= lucrare.id_art %>">
+                <button type="submit" class="addCart">Add to Cart</button>
+            </form>
+
+            <button class="generateBtn">Generate image</button>
+        </div>
+        <div class="result"></div>
+    </div>
+    <% }); %>
+</div>
+
+
+<a href="/cart">Go to Cart</a>
+
+<script src="/script.js"></script>
+</body>
+</html>

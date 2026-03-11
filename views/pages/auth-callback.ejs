@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logging In...</title>
+</head>
+<body>
+<h1>Logging you in...</h1>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const next = params.get('next') || '/';
+
+    if (code) {
+        // TODO: Trimite `code` la backend pt token în varianta reală
+        sessionStorage.setItem('auth_code', code);
+
+        // Redirecționează la pagina indicată (ex: /about)
+        window.location.href = next;
+    } else {
+        document.body.innerHTML = "<h1>Login failed. No code received.</h1>";
+    }
+</script>
+</body>
+</html>

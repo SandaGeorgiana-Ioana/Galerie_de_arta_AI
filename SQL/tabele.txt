@@ -1,0 +1,48 @@
+use art_gallery;
+
+CREATE TABLE art (
+                     id_art INT NOT NULL,
+                     id_artist INT,
+                     descriere VARCHAR(255),
+                     locatie VARCHAR(255),
+                     pret DECIMAL(10,2),
+                     categorie VARCHAR(255),
+                     PRIMARY KEY (id_art)
+);
+
+CREATE TABLE artist (
+                        id_artist INT NOT NULL,
+                        id_user VARCHAR(255),
+                        user_name VARCHAR(255),
+                        PRIMARY KEY (id_artist)
+);
+
+CREATE TABLE date_comanda (
+                              id_date_comanda INT NOT NULL,
+                              id_user VARCHAR(255),
+                              id_art INT,
+                              adresa VARCHAR(255),
+                              data DATE,
+                              status VARCHAR(255),
+                              PRIMARY KEY (id_date_comanda)
+);
+
+
+CREATE TABLE user (
+                      id_user VARCHAR(255) NOT NULL,
+                      email VARCHAR(255),
+                      first_name VARCHAR(255),
+                      last_name VARCHAR(255),
+                      password VARCHAR(255),
+                      registered DATETIME,
+                      last_login DATETIME,
+                      user_name VARCHAR(255),
+                      PRIMARY KEY (id_user)
+);
+
+CREATE TABLE user_comanda (
+                              id_user_comanda INT NOT NULL,
+                              id_user VARCHAR(255),
+                              id_date_comanda INT,
+                              PRIMARY KEY (id_user_comanda)
+);

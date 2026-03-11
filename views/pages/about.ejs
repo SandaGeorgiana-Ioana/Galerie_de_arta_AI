@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Cinzel">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+    </div>
+
+    <a href="/about" onclick="showContent('about')">About</a>
+    <div class="dropdown">
+        <a href="/art">Arts</a>
+        <div class="submenu">
+            <a href="/portraits" onclick="arts_menu('portraits')">Pencil portraits</a>
+            <a href="/acrylic" onclick="arts_menu('acrylic')">Acrylic paintings</a>
+            <a href="/watercolor" onclick="arts_menu('watercolor')">Watercolor paintings</a>
+            <a href="/dress" onclick="arts_menu('dress')">Drawings</a>
+            <a href="/random_draw" onclick="arts_menu('random_draw')">Random drawings</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="/artists">Artists</a>
+        <div class="submenu">
+            <a href="/bia" onclick="artist_menu('1')">BIA</a>
+            <a href="/georgi" onclick="artist_menu('2')">GEORGI</a>
+            <a href="/marian" onclick="artist_menu('3')">MARIAN</a>
+        </div>
+    </div>
+    <a href="/reacts" onclick="showContent('reacts')">Reacts</a>
+    <a href="/ai_art" onclick="showContent('ai')">AI Art</a>
+
+    <div class="dropdown">
+        <div class="submenu">
+            <a window.location.href="/register" onclick="account_menu('register')">Register</a>
+            <a href="#" onclick="account_menu('condition')">Conditions</a>
+        </div>
+        <p class="greeting">Hello, <%= user %>!</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+</div>
+
+<div class="cart" onclick="showCart()">Cart (<span id="cart_count">0</span>)</div>
+
+<h1 id="text_logo">Infinite pallete</h1>
+<h1 id="page"> ~ about us ~ </h1>
+
+<div class="about-section">
+    <div class="about-card">
+        <h2>Our Story</h2>
+        <p>We are a passionate team of artists and art lovers who needed a project for our Software development tools courses.</p>
+    </div>
+
+    <div class="about-card">
+        <h2>Our Mission</h2>
+        <p>Our mission is to bring authentic art into your life and to pass the exam. We promote original creations, offer custom art services, and ensure every piece tells a story. We stand for creativity, quality, and direct support for artists.</p>
+    </div>
+
+    <div class="about-card">
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Original paintings in acrylic, watercolor, and pencil.</li>
+            <li>Portraits made on request.</li>
+            <li>Digital generated art.</li>
+            <li>Custom art commissions tailored to your vision.</li>
+        </ul>
+        <a class="show" href="/art" >See our art now</a>
+
+    </div>
+
+    <div class="about-card">
+        <h2>Our Artists</h2>
+        <p>Meet our talented creators: Bianca, Georgiana, Marian, and many more. Visit their dedicated pages to discover their stories and artworks.</p>
+        <p></p>
+        <a class="show" href="/artists" >See our artists now</a>
+    </div>
+
+    <div class="about-card">
+        <h2>Join Our Community</h2>
+        <p>Follow us on social media to stay updated with new collections, exclusive offers, and behind-the-scenes content from our artists’ studios. Become part of our art-loving community!</p>
+        <br>
+        <a class="link" href="https://www.instagram.com/bianca_husu/" >https://www.instagram.com/infinite_pallete</a>
+        <br>
+
+    </div>
+
+    <div class="about-card">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to collaborate? Reach out to us through our contact form or email. We’re always happy to connect with fellow art enthusiasts.</p>
+        <br>
+        <a class="link" href="mailto:biancahusu3@gmail.com" > 🖂 Send us an email.</a>
+        <br>
+        <a class="link" href="tel:+40712345678"> 📞 Call us.</a>
+        <br>
+    </div>
+
+    <div class="about-card">
+        <blockquote>"Art with soul, delivered to your home."</blockquote>
+    </div>
+
+</div>
+
+
+<script src="/script.js"></script>
+<script src="/routes/authentication.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+    </div>
+
+    <a href="/about" onclick="showContent('about')">About</a>
+    <div class="dropdown">
+        <a href="/art">Arts</a>
+        <div class="submenu">
+            <a href="/portraits" onclick="arts_menu('portraits')">Pencil portraits</a>
+            <a href="/acrylic" onclick="arts_menu('acrylic')">Acrylic paintings</a>
+            <a href="/watercolor" onclick="arts_menu('watercolor')">Watercolor paintings</a>
+            <a href="/draw" onclick="arts_menu('draw')">Drawings</a>
+            <a href="/random_draw" onclick="arts_menu('random_draw')">Random drawings</a>
+
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="/artists">Artists</a>
+        <div class="submenu">
+            <a href="/bia" onclick="artist_menu('1')">BIA</a>
+            <a href="/georgi" onclick="artist_menu('2')">GEORGI</a>
+            <a href="/marian" onclick="artist_menu('3')">MARIAN</a>
+        </div>
+    </div>
+    <a href="/reacts" onclick="showContent('reacts')">Reacts</a>
+    <a href="/ai_art" onclick="showContent('ai')">AI Art</a>
+
+    <div class="dropdown">
+        <div class="submenu">
+            <a href="/logout" id="logoutBtn">Logout</a>
+        </div>
+        <p class="greeting">Hello, <%= user %>!</p>
+    </div>
+</div>
+
+<div id="main">
+    <div class="cos-container">
+        <% if (typeof art !== 'undefined' && art) { %>
+            <h1><%= art.art_name %></h1>
+            <img class="image_container" src="<%= art.art_images.split(',')[0] %>" alt="<%= art.art_name %>">
+
+            <p><strong>Preț:</strong> <%= art.price %> RON</p>
+
+            <form action="/cart" method="post">
+                <input type="hidden" name="art_name" value="<%= art.art_name %>">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="judet" placeholder="Judet" required>
+                <input type="text" name="oras" placeholder="Oras" required>
+                <input type="text" name="str" placeholder="Strada si numarul" required>
+                <input type="text" name="tele" placeholder="Nr de telefon" required>
+
+                <button type="submit">Plasează comanda</button>
+            </form>
+        <% } %>
+        <% if (typeof success !== 'undefined' && success === '1') { %>
+            <p style="color: green; font-weight: bold;">Comanda a fost plasată cu succes!</p>
+        <% } %>
+
+    </div>
+
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
